@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+    
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Home Page Admin</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/css/AdminPage.css">
+
+</head>
+<body>
+    <div class="admin">
+    
+    <h1>Welcom</h1>
+    </div>
+</body>
+<header>
+    <a href="#" class="CoffeShop">
+        <img src="~/Content/css/image/coffeelogo.png" alt="">
+
+    </a>
+    <i class='homepa' id="menu-icon"></i>
+    <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="@Url.Action("MenuPage", "CoffeeShop")">Menu</a></li>
+        <li><a href="@Url.Action("Rooms", "CoffeeShop")">Rooms</a></li>
+    </ul>
+</header>
+</html>

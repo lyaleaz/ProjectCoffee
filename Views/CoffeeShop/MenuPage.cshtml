@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/css/MenuPage.css">
+
+    <title>menu page</title>
+</head>
+<body>
+    <div>
+        <h1>Welcom to menu page</h1>
+    </div>
+    <section class="Menu" id="Menu">
+        <div class="heading">
+            <h2>
+                Our Popular Products
+            </h2>
+        </div>
+        <div class="products-container">
+            <div class="box">
+                <img src="~/Content/css/image/pro1.jpg" alt="" />
+                <h3>Sahlb</h3>
+                <div class="content">
+                    <span>7 IL</span>
+
+                </div>
+
+            </div>
+
+            <div class="box">
+                <img src="~/Content/css/image/pro2.jpg" alt="" />
+                <h3>Capitchino</h3>
+                <div class="content">
+                    <span>8 IL</span>
+
+                </div>
+
+            </div>
+
+            <div class="box">
+                <img src="~/Content/css/image/pro3.jpg" alt="" />
+                <h3>Caffee Carima</h3>
+                <div class="content">
+                    <span>13 IL</span>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </section>
+    <section class="home" id="home">
+        <div class="home-text">
+            <a href="#" class="btn">Add new item</a>
+        </div>
+        @*@Url.Action("NewProd", "CoffeeShop")*@
+
+    </section>
+</body>
+</html>

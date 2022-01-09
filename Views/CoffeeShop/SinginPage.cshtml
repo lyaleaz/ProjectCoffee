@@ -1,0 +1,81 @@
+﻿@model  ProjectCoffee.Models.Customers
+@{
+    ViewBag.Title = "SinginPage";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Singin Page</title>
+    <link rel="stylesheet" href="~/Content/css/SinginPage.css">
+</head>
+<body>
+    @using (Html.BeginForm("Register", "CoffeeShop", FormMethod.Post))
+    {
+        <form action="Register  " method="post">
+            <div class="wrapper">
+                <div class="title">
+                    Singin Here
+                </div>
+                <div class="form">
+                    @Html.AntiForgeryToken()
+                    @Html.TextBoxFor(m => m.ID, new { @placeholder = "ID ", @class = "id" })
+                    <div class="inputfield">
+                        <label>ID</label>
+                    </div>
+                    @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First Name ", @class = "name1" })
+                    <div class="inputfield">
+                        <label>First Name</label>
+                    </div>
+                    @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last Name ", @class = "name2" })
+                    <div class="inputfield">
+                        <label>Last Name</label>
+
+                    </div>
+                   @*@Html.TextBoxFor(m => m.BirthDate)*@
+                <div class="inputfield">
+                    <input type="date" id="dateBirth" name="birth">
+                    <label>Birth Date</label>
+
+                </div>
+                    @Html.TextBoxFor(m => m.Username, new { @placeholder = "userName ", @class = "user" })
+                    <div class="inputfield">
+                        <label>User Name</label>
+                    </div>
+                    @Html.TextBoxFor(m => m.Password, new { @placeholder = "password ", @class = "pass" })
+                    <div class="inputfield">
+                        <label>Password</label>
+                    </div>
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @placeholder = "confirmpassword ", @class = "confpass" })
+                    <div class="inputfield">
+                        <label>Confirm Password</label>
+                    </div>
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email ", @class = "email" })
+                    <div class="inputfield">
+                        <label>Email Address</label>
+                    </div>
+                    @Html.TextBoxFor(m => m.PhonNumber, new { @placeholder = "Phon Number ", @class = "phon" })
+                    <div class="inputfield">
+                        <label>Phone Number</label>
+                    </div>
+
+
+                    <div class="inputfield terms">
+                        <label class="check">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <p>Agreed to terms and conditions</p>
+                    </div>
+                    <div class="inputfield">
+                        <input type="submit" value="Register" class="btn">
+                    </div>
+                </div>
+            </div>
+            </form>
+            }
+    </body>
+</html>
+
