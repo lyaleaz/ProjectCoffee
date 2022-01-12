@@ -16,6 +16,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 using ProjectCoffee.Dal;
+using System.Runtime.Remoting.Contexts;
 
 namespace ProjectCoffee.Controllers
 {
@@ -23,17 +24,16 @@ namespace ProjectCoffee.Controllers
 
     public class CoffeeShopController : Controller
     {
-        UserDBEntities db1 = new UserDBEntities();
         UserD db = new UserD();
+        //DbModels db1 = new DbModels();
         
-        //  DbModels db = new DbModels();
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
         SqlConnection con1 = new SqlConnection();
-        //UserDBEntities ob = new UserDBEntities();
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-4JKOUPSU;Initial Catalog=UserDB;Integrated Security=True");
+
         // GET: CoffeeShop
-        
         [HttpGet]
         public ActionResult CoffeeShop()
         {
@@ -74,13 +74,8 @@ namespace ProjectCoffee.Controllers
             con.ConnectionString = "data source=LAPTOP-4JKOUPSU; database=UserDB; integrated security = SSPI;";
 
         }
-        void connectionString1()
-        {
-            con1.ConnectionString = "data source=LAPTOP-4JKOUPSU; database=UserDB; integrated security = SSPI;";
-
-        }
-
-
+      
+       
         [HttpPost]
         public ActionResult Verify(Admin add,User user)
         {
@@ -136,8 +131,43 @@ namespace ProjectCoffee.Controllers
 
 
         }
+        [HttpGet]
+        public ActionResult NewProd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewProd(Product pro)
+        
+        {
+            if (ModelState.IsValid)
+            {
+                pro.image = "../../Image/" + pro.image;
+                db.Products.Add(pro);
+                db.SaveChanges();
+               
+                return RedirectToAction("MenuPage");
+
+            }
+
+            return View(pro);
+        }
        
 
+        //public ActionResult SaveData(Product prod)
+        //{
+        //    if (prod.NameProduct != null && prod.price != null && prod.ImageUpload != null)
+        //    {
+        //        string filename = Path.GetFileNameWithoutExtension(prod.ImageUpload.);
+        //    }
 
+        //}
     }
+
+
+
+
+
+
+
 }

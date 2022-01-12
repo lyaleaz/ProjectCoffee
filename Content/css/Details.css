@@ -1,0 +1,36 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    padding: 40px 40px;
+    min-height: 100vh;
+    background: url(/Content/css/image/Itrnem22.JPG) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td, 
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 7px;
+line-height: 1.42857143;
+vertical-align: top;
+border-top: 1px solid #fff;
+ padding-top: 7px; 
+    margin-bottom: 0;
+text-align: right;
+color: white; 

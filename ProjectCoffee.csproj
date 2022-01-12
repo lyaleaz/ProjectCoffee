@@ -130,7 +130,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CoffeeShopController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Dal\ProductD.cs" />
     <Compile Include="Dal\UserD.cs" />
+    <Compile Include="Data\ProjectCoffeeContext.cs" />
     <Compile Include="Models\AdminDB.cs">
       <DependentUpon>BbModels.tt</DependentUpon>
     </Compile>
@@ -153,24 +156,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\DbProduct.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbProduct.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbProduct.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbProduct.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbProduct.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbProduct.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>DbProduct.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -180,6 +166,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\AdminPage.css" />
+    <Content Include="Content\css\Details.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\image\1.jpg" />
     <Content Include="Content\css\image\about.jpg" />
@@ -203,6 +190,7 @@
     <Content Include="Content\css\image\pro2.jpg" />
     <Content Include="Content\css\image\pro3.jpg" />
     <Content Include="Content\css\MenuPage.css" />
+    <Content Include="Content\css\Product.css" />
     <Content Include="Content\css\SinginPage.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\trneema.jpg" />
@@ -212,6 +200,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\tarnem1 %281%29.JPG" />
+    <Content Include="Image\tarnem1 %282%29.JPG" />
+    <Content Include="Image\tarnem1 %283%29.JPG" />
+    <Content Include="Image\tarnem1 %284%29.JPG" />
+    <Content Include="Image\tarnem1 %285%29.JPG" />
+    <Content Include="Image\tarnem1 %286%29.JPG" />
+    <Content Include="Image\tarnem1 %287%29.JPG" />
+    <Content Include="Image\tarnem1 %288%29.JPG" />
+    <Content Include="Image\tarnem1 %289%29.JPG" />
     <Content Include="Models\BbModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BbModels.edmx</DependentUpon>
@@ -221,16 +218,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BbModels.edmx</DependentUpon>
       <LastGenOutput>BbModels.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DbProduct.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbProduct.edmx</DependentUpon>
-      <LastGenOutput>DbProduct.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DbProduct.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbProduct.edmx</DependentUpon>
-      <LastGenOutput>DbProduct.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -247,13 +234,6 @@
       <DependentUpon>BbModels.edmx</DependentUpon>
     </Content>
     <Content Include=".editorconfig" />
-    <EntityDeploy Include="Models\DbProduct.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbProduct.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DbProduct.edmx.diagram">
-      <DependentUpon>DbProduct.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -290,15 +270,19 @@
     <Content Include="Views\CoffeeShop\HomePageAdmin.cshtml" />
     <Content Include="Views\CoffeeShop\Login.cshtml" />
     <Content Include="Views\CoffeeShop\Erorr.cshtml" />
-    <Content Include="Views\CoffeeShop\Index.cshtml" />
     <Content Include="Views\CoffeeShop\Customer.cshtml" />
     <Content Include="Views\CoffeeShop\Register.cshtml" />
     <Content Include="Views\CoffeeShop\MenuPage.cshtml" />
     <Content Include="Views\CoffeeShop\Rooms.cshtml" />
+    <Content Include="Views\CoffeeShop\NewProd.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="Views\Registretion\" />
   </ItemGroup>
   <ItemGroup>
