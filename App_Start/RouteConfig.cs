@@ -17,7 +17,16 @@ namespace ProjectCoffee
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "CoffeeShop", action = "Register", id = UrlParameter.Optional }
+
             );
+            //routes.MapRoute(
+            //    name:"about",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "CoffeeShop", action = "NewProd", id = UrlParameter.Optional }
+            //);
+
+
+
         }
     }
 }
