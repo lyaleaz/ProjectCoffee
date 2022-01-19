@@ -130,10 +130,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CoffeeShopController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Dal\ProductD.cs" />
     <Compile Include="Dal\UserD.cs" />
+    <Compile Include="DataOfProduct\db.cs" />
     <Compile Include="Data\ProjectCoffeeContext.cs" />
+    <Compile Include="MenuOfCustomer.aspx.cs">
+      <DependentUpon>MenuOfCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuOfCustomer.aspx.designer.cs">
+      <DependentUpon>MenuOfCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AdminDB.cs">
       <DependentUpon>BbModels.tt</DependentUpon>
     </Compile>
@@ -166,6 +175,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\AdminPage.css" />
+    <Content Include="Content\css\CustomerPage.css" />
     <Content Include="Content\css\Details.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\image\1.jpg" />
@@ -189,6 +199,7 @@
     <Content Include="Content\css\image\pro1.jpg" />
     <Content Include="Content\css\image\pro2.jpg" />
     <Content Include="Content\css\image\pro3.jpg" />
+    <Content Include="Content\css\MenuDesing.css" />
     <Content Include="Content\css\MenuPage.css" />
     <Content Include="Content\css\Product.css" />
     <Content Include="Content\css\SinginPage.css" />
@@ -200,15 +211,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Image\tarnem1 %281%29.JPG" />
-    <Content Include="Image\tarnem1 %282%29.JPG" />
-    <Content Include="Image\tarnem1 %283%29.JPG" />
-    <Content Include="Image\tarnem1 %284%29.JPG" />
-    <Content Include="Image\tarnem1 %285%29.JPG" />
-    <Content Include="Image\tarnem1 %286%29.JPG" />
-    <Content Include="Image\tarnem1 %287%29.JPG" />
-    <Content Include="Image\tarnem1 %288%29.JPG" />
-    <Content Include="Image\tarnem1 %289%29.JPG" />
+    <Content Include="Images\1.JPG" />
+    <Content Include="Images\2.JPG" />
+    <Content Include="Images\3.JPG" />
+    <Content Include="Images\4.JPG" />
+    <Content Include="Images\5.JPG" />
+    <Content Include="Images\6.JPG" />
+    <Content Include="Images\7.JPG" />
+    <Content Include="Images\8.JPG" />
+    <Content Include="Images\9.JPG" />
+    <Content Include="MenuOfCustomer.aspx" />
     <Content Include="Models\BbModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BbModels.edmx</DependentUpon>
@@ -280,9 +292,13 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\CoffeeShop\MenuCustomer.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\datapup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customers\" />
     <Folder Include="Views\Registretion\" />
   </ItemGroup>
   <ItemGroup>

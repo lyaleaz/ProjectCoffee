@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+    <table id="tbldata" class="tableData">
+        <tr>
+            <th>Name Product</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+    </table>
+    </div>
+    <script>
+        $(function () {
+            $.get("get_data", {}, function(data) {
+                var row;
+                $.each(data, function (i, v1) {
+                    row+="<tr><td>"+v1.NameProduct+"<tr><td>"+v1.price+"<tr><td>"+v1.image+"<tr><td>"
+                })
+                $("#tbldata").append(row);
+            })
+        }) 
+    </script>
+</body>
+</html>

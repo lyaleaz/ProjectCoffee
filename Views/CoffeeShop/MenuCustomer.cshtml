@@ -23,23 +23,6 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.NameProduct)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.price)
-    </td>
-    <td>
-        <img src="@Url.Content(item.image)" width="100" height="100" />
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.NameProduct }) |
-        @Html.ActionLink("Details", "Details", new { id = item.NameProduct }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.NameProduct })
-    </td>
-</tr>
-}
+    
 
 </table>
