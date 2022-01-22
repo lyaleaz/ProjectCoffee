@@ -136,6 +136,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AddToCartController.cs" />
+    <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\CoffeeShopController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -327,6 +328,11 @@
     <Content Include="Views\CoffeeShop\AddToCart1.cshtml" />
     <Content Include="Views\CoffeeShop\AddToCart.cshtml" />
     <Content Include="Views\AddToCart\DatOrder.cshtml" />
+    <Content Include="Views\Carts\Create.cshtml" />
+    <Content Include="Views\Carts\Delete.cshtml" />
+    <Content Include="Views\Carts\Details.cshtml" />
+    <Content Include="Views\Carts\Edit.cshtml" />
+    <Content Include="Views\Carts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
