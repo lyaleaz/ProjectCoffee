@@ -5,8 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     
-    <title></title>
-</head>
+<%--<script type="text/javascript">
+    function
+</script>--%>
+    
+    </head>
 <body>
     <form id="form1" runat="server">
         <link rel="stylesheet" href="~/Content/css/CustomerPage.css">
@@ -18,7 +21,6 @@
                     <asp:BoundField DataField="price" HeaderText="Price"/>
                     <asp:BoundField DataField="image" HeaderText="Image"/>
                    
-
                 </Columns>
             </asp:GridView>
         </div>

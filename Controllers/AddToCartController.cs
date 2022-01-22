@@ -20,26 +20,26 @@ using ProjectCoffee.Dal;
 
 namespace ProjectCoffee.Controllers
 {
-    public class CustomerController : Controller
+    public class AddToCartController : Controller
     {
         private IEnumerable<object> collection;
 
-        // GET: Customer
-      
+        // GET: AddToCart
+
         public ActionResult Index()
         {
             return View();
         }
-   
-        public ActionResult datapup()
+
+        public ActionResult DatOrder()
         {
             SqlConnection Con = new SqlConnection();
-            string path = ConfigurationManager.ConnectionStrings["ProjectCoffeeContext"].ConnectionString;
+            string path = ConfigurationManager.ConnectionStrings["UserD"].ConnectionString;
             Con.ConnectionString = path;
             DataTable dt = new DataTable();
             try
             {
-                SqlDataAdapter adp = new SqlDataAdapter("select * from Products", Con);
+                SqlDataAdapter adp = new SqlDataAdapter("select * from Cart", Con);
                 adp.Fill(dt);
 
             }
@@ -49,7 +49,7 @@ namespace ProjectCoffee.Controllers
             }
             return View(dt);
         }
-       
-   
+
+
     }
 }

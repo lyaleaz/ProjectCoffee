@@ -137,8 +137,51 @@ namespace ProjectCoffee.Controllers
 
 
         }
+        [HttpGet]
+        public ActionResult NewProd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewProd(Product pro)
 
+        {
+            if (ModelState.IsValid)
+            {
+                pro.image = "~/Images/" + pro.image;
+                db.Products.Add(pro);
+                db.SaveChanges();
 
+                return RedirectToAction("MenuPage");
+
+            }
+
+            return View(pro);
+        }
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult AddToCart1(Cart cart)
+        {
+            if (ModelState.IsValid)
+            {
+
+                db.Carts.Add(cart);
+                db.SaveChanges();
+                return RedirectToAction("Menu");
+
+            }
+
+            return View("AddToCart");
+        }
+        public ActionResult AddToCart()
+        {
+            return View();
+        }
+      
+  
 
     }
 }

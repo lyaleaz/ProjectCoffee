@@ -11,13 +11,14 @@
         <link rel="stylesheet" href="~/Content/css/MenuDesing.css">
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     </head>
+
         <div>
             <header>
                 <a href="#" class="CoffeShop">
                     <img src="~/Content/css/image/coffeelogo.png" alt="">
 
                 </a>
-
+                
                 <div class="header-icon">
                     <i class='bx bx-cart-alt'></i>
                     <i class='bx bx-search-alt' id="search-icon"></i>
@@ -40,9 +41,11 @@
                             <tr>
                                 @foreach (var cell in row.ItemArray)
                                 {
+                                    
                                     if (cell != null)
                                     {
                                         <td>  @cell.ToString() </td>
+                                        
                                     }
                                     else
                                     {
@@ -50,9 +53,14 @@
                                     }
                                 }
                             </tr>
-                        }
+                        
+                            }
+                        
                     </tbody>
                 </table>
+                
             }
+            
+            
         </div>
 </html>

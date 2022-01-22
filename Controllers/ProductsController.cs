@@ -52,7 +52,7 @@ namespace ProjectCoffee.Controllers
 
             if (ModelState.IsValid)
             {
-                product.image = "../../Images/" + product.image;
+                product.image = "~/Images/" + product.image;
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
