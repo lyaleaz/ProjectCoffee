@@ -53,6 +53,12 @@
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -129,11 +135,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddToCartController.cs" />
     <Compile Include="Controllers\CoffeeShopController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Dal\CartD.cs" />
     <Compile Include="Dal\ProductD.cs" />
     <Compile Include="Dal\UserD.cs" />
+    <Compile Include="DataOfProduct\db.cs" />
     <Compile Include="Data\ProjectCoffeeContext.cs" />
+    <Compile Include="MenuOfCustomer.aspx.cs">
+      <DependentUpon>MenuOfCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuOfCustomer.aspx.designer.cs">
+      <DependentUpon>MenuOfCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AdminDB.cs">
       <DependentUpon>BbModels.tt</DependentUpon>
     </Compile>
@@ -156,6 +173,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\cartt.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,9 +186,21 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\AdminPage.css" />
+    <Content Include="Content\css\CustomerPage.css" />
+    <Content Include="Content\css\DataOfOrder.css" />
     <Content Include="Content\css\Details.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\image\1.jpg" />
+    <Content Include="Content\css\image\10.png" />
+    <Content Include="Content\css\image\11.png" />
+    <Content Include="Content\css\image\2.png" />
+    <Content Include="Content\css\image\3.png" />
+    <Content Include="Content\css\image\4.png" />
+    <Content Include="Content\css\image\5.png" />
+    <Content Include="Content\css\image\6.png" />
+    <Content Include="Content\css\image\7.png" />
+    <Content Include="Content\css\image\8.png" />
+    <Content Include="Content\css\image\9.png" />
     <Content Include="Content\css\image\about.jpg" />
     <Content Include="Content\css\image\ba.png" />
     <Content Include="Content\css\image\coffee2.png" />
@@ -179,6 +211,7 @@
     <Content Include="Content\css\image\tarneem1.jpg" />
     <Content Include="Content\css\image\tranem11.JPG" />
     <Content Include="Content\css\image\trnemm33.JPG" />
+    <Content Include="Content\css\image\‏‏trneema - 1.jpg" />
     <Content Include="Content\css\LogInPage.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\image\p2.png" />
@@ -189,26 +222,30 @@
     <Content Include="Content\css\image\pro1.jpg" />
     <Content Include="Content\css\image\pro2.jpg" />
     <Content Include="Content\css\image\pro3.jpg" />
+    <Content Include="Content\css\Menu.css" />
+    <Content Include="Content\css\MenuDesing.css" />
     <Content Include="Content\css\MenuPage.css" />
     <Content Include="Content\css\Product.css" />
     <Content Include="Content\css\SinginPage.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\trneema.jpg" />
     <Content Include="Content\css\image\WCoffeeShop.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Image\tarnem1 %281%29.JPG" />
-    <Content Include="Image\tarnem1 %282%29.JPG" />
-    <Content Include="Image\tarnem1 %283%29.JPG" />
-    <Content Include="Image\tarnem1 %284%29.JPG" />
-    <Content Include="Image\tarnem1 %285%29.JPG" />
-    <Content Include="Image\tarnem1 %286%29.JPG" />
-    <Content Include="Image\tarnem1 %287%29.JPG" />
-    <Content Include="Image\tarnem1 %288%29.JPG" />
-    <Content Include="Image\tarnem1 %289%29.JPG" />
+    <Content Include="Images\1.JPG" />
+    <Content Include="Images\2.JPG" />
+    <Content Include="Images\3.JPG" />
+    <Content Include="Images\4.JPG" />
+    <Content Include="Images\5.JPG" />
+    <Content Include="Images\6.JPG" />
+    <Content Include="Images\7.JPG" />
+    <Content Include="Images\8.JPG" />
+    <Content Include="Images\9.JPG" />
+    <Content Include="MenuOfCustomer.aspx" />
     <Content Include="Models\BbModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BbModels.edmx</DependentUpon>
@@ -280,9 +317,20 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\CoffeeShop\MenuCustomer.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\datapup.cshtml" />
+    <Content Include="Views\Customer\ViewCart.cshtml" />
+    <Content Include="Views\CoffeeShop\Menu.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\CoffeeShop\CustPageMenu.cshtml" />
+    <Content Include="Views\CoffeeShop\AddToCart1.cshtml" />
+    <Content Include="Views\CoffeeShop\AddToCart.cshtml" />
+    <Content Include="Views\AddToCart\DatOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customers\" />
     <Folder Include="Views\Registretion\" />
   </ItemGroup>
   <ItemGroup>

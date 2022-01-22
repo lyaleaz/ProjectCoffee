@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace ProjectCoffee.Models
 {
-    public class Product
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Product
     {
         [Key]
         public string NameProduct { get; set; }
         public string price { get; set; }
-        public string image { get; set; } 
-
+        public string image { get; set; }
     }
 }

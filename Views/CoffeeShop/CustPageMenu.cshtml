@@ -1,0 +1,28 @@
+﻿@using ProjectCoffee.Models;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Product>
+    @{ 
+        foreach(var item in Model)
+        {
+            <div class="main-contect">
+                <div class="content-image">
+                    <a href="#"><img src='@Url.Content("~/Image/")'</a>
+
+                </div>
+                <div class="content-title">
+                    <a href="#">@item.NameProduct</a>
+
+                </div>
+                <div class="content-price">
+                    price: $@item.price
+                </div>
+
+            </div>
+        }
+    }
+<div class="clear"></div>
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="div-pagination">
+    @Html.PagedListGoToPageForm(Model, page => Url.Action("Index",new { page=page}))
+</div>*@

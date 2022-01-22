@@ -1,0 +1,24 @@
+﻿@model  IEnumerable<ProjectCoffee.Models.Product>
+@{
+    ViewBag.Title = "ViewCart";
+}
+
+<h2>ViewCart</h2>
+<div class="container">
+    <h2 class="text-center">Product List</h2>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3" style="margin-bottom: 30px">
+            <div style="text-align: center; border-bottom: 1px solid">
+                <h4>@item.NameProduct</h4>
+            </div>
+            <div class="thumbnail">
+                <div class="image" style="margin: 20px">
+                    <img class="img-responsive" src="@Url.Content(item.image)" height="200px" width="200px" />
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
+

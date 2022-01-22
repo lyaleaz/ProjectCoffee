@@ -20,5 +20,7 @@ namespace ProjectCoffee.Data
         }
 
         public System.Data.Entity.DbSet<ProjectCoffee.Models.Product> Products { get; set; }
+      //  public System.Data.Entity.DbSet<ProjectCoffee.Models.Cart> Carts { get; set; }
+
     }
 }
